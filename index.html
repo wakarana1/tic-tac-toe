@@ -12,42 +12,45 @@
 
 <!-- tic-tac-toe board -->
 	<table class="board">
-		<tr>
-			<td>
-				
+		<tr id="row1">
+			<td class="box" ng-click="playermove(1)">
+				1
 			</td>
-			<td>
-				
+			<td class="box m" ng-click="playermove(2)">
+				2
 			</td>
-			<td>
-				
-			</td>
-		</tr>
-		<tr>
-			<td>
-				
-			</td>
-			<td>
-				
-			</td>
-			<td>
-				
+			<td class="box" ng-click="playerMove(3)">
+				3
 			</td>
 		</tr>
-		<tr>
-			<td>
-				
+		<tr id="row2">
+			<td class="box c" ng-click="playerMove(4)">
+				{{ getSymbol(4) }}
 			</td>
-			<td>
-				
+			<td class="box m c" ng-click="playerMove(5)">
+				5
 			</td>
-			<td>
-				
+			<td class="box c" ng-click="playerMove(6)">
+				6
+			</td>
+		</tr>
+		<tr id="row3">
+			<td class="box" ng-click="playerMove(7)">
+				7
+			</td>
+			<td class="box m" ng-click="playerMove(8)">
+				8
+			</td>
+			<td class="box" ng-click="playerMove(9)">
+				9
 			</td>
 		</tr>
 	</table>
 
 </body>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
-	<script type="text/javascript" src="js/apps.js"></script>
+	<script type="text/javascript" src="app.js"></script>
+	<script type="text/javascript" src="GameController.js"></script>
 </html>
+<!-- see if block is empty
+	model a "game" -->
