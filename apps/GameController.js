@@ -3,7 +3,7 @@ angular
 
 function GameController($scope) {
 	$scope.playerMove = function (ev) {
-		alert("clicked");
+		// alert("clicked");
 		console.log(ev);
 	}
 	$scope.getSymbol = function (boxNumber) {

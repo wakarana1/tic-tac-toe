@@ -10,7 +10,6 @@
 	height: 500px;
 	text-align: center;
 	margin: 0 auto;
-
 }
 
 h1 {
@@ -20,27 +19,37 @@ h1 {
 }
 
 .box{
-    width:30%;
-    height:30%;
+    width:20%;
+    height:20%;
+    margin: 10%;
     background-color: gray;
     border-radius: 15px;
     box-shadow: 4px 4px black; 
     position: relative;
-    transition: all 0.1s ease;
+    transition: all 0.2s ease;
 }
 
 .m{
-    border-left:10px solid;
-    border-right:10px solid;
+    border-left:2px solid;
+    border-right:2px solid;
 }
 
 .c{
-    border-top:10px solid;
-    border-bottom:10px solid;
+    border-top:2px solid;
+    border-bottom:2px solid;
+
 }
 .box:active {
     top: 4px;
     left: 4px;
     box-shadow: 0px 0px black;
 
+}
+#player1 {
+	float: left;
+	margin-left: 30px;
+}
+#player2 {
+	float: left;
+	margin-left: 30px;
 }
