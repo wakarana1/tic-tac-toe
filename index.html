@@ -1,27 +1,29 @@
 <!DOCTYPE html>
-<html lang = "en" ng-app="TicTacToe">
+<html lang = "en" >
 <head>
-	<meta charset = "UTF-8">
+	<mesafta charset = "UTF-8">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<title>TicTacToe</title>
 </head>
 
-<body ng-controller="GameController">
+<body ng-app="TicTacToe" ng-controller="GameController as vm">
 	<h1>Tic Tac Toe!</h1>
 
-	<div id="player1">
-		<h1>Player 1</h1>
+	<div id="player">
+		<h1 ng-show="vm.game.winner === 1">{{vm.game.player1}}</h1>
+		<h1 ng-show="vm.game.winner === -1">{{vm.game.player2}}</h1>
 	</div>
-		<div id="player2">
-		<h1>Player 2</h1>
-	</div>
-
+	<span>Player 1 name: <input type="text" ng-model ="vm.game.player1"></span>
+	<div>Score: {{vm.game.score1}}</div>
+	<span>Player 2 name: <input type="text" ng-model ="vm.game.player2"></span>
+	<div>Score: {{vm.game.score2}}</div>
+	
 <!-- tic-tac-toe board -->
 	<table class="board">
 		<tr id="row1">
-			<td class="box" ng-click="playermove(1)" ng-class="">
-				
+			<td class="box" id="tile1" ng-click="playermove(1)" ng-class="">
+				{{vm}}
 			</td>
 			<td class="box m" ng-click="playermove(2)" ng-class="<!-- createFunction -->" >
 				
@@ -34,7 +36,7 @@
 			<td class="box c" ng-click="playerMove(4)" ng-class="<!-- createFunction -->" >
 				{{ getSymbol(4) }}
 			</td>
-			<td class="box m c" ng-click="playerMove(5)" ng-class="<!-- createFunction -->" >
+			<td class="box m c" ng-cliafack="playerMove(5)" ng-class="<!-- createFunction -->" >
 				
 			</td>
 			<td class="box c" ng-click="playerMove(6)" ng-class="<!-- createFunction -->" >
@@ -59,5 +61,4 @@
 	<script type="text/javascript" src="app.js"></script>
 	<script type="text/javascript" src="GameController.js"></script>
 </html>
-<!-- see if block is empty
-	model a "game" -->
+<!-- model a "game" -->
