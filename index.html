@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang = "en" ng-app="TicTacToe" >
+<html lang = "en" ng-app="TicTacToe">
 <head>
 	<meta charset = "UTF-8">
 	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
@@ -15,52 +15,49 @@
 <body ng-controller="GameController">
 	<h1>Tic Tac Toe!</h1>
 
- <!-- Player status -->
-	<div id="player">
+ 	<!-- Player status -->
+	<div class="player">
 		<h1 ng-show="">{player1}</h1>
 		<h1 ng-show="">{player2}</h1>
 	</div>
-	<span>{name.player1} name: <form ng-submit="name.player1"><input type="text" ng-model ="player1"></form></span>
-	<div>Score: {{score1}}</div>
-	<span>{name.player2} name: <form ng-submit="name.player2"><input type="text" ng-model ="player2"></form></span>
-	<div>Score: {{score2}}</div>
+	<div class="player-info">
+		<span>X</span>
+			<div>Score: {{game.players.player1.wins}}</div>
 
-<!-- tic-tac-toe board -->
+		<span>Zero</span>
+			<div>Score: {{game.players.player2.wins}}</div>
+	</div>
+
+	<!-- tic-tac-toe board -->
 	<table class="board">
 		<tr id="row1">
-			<td class="box" ng-click="playerMove(0)" ng-class="{player1: board[0].$value == -1, player2: board[0].$value == 1}">
+			<td class="box" ng-click="playerMove(0)" ng-class="{player1: game.board[0] == -1, player2: game.board[0] == 1}"></td>
 			
-			</td>
-			<td class="box m" ng-click="playerMove(1)" ng-class="{player1: board[1].$value == -1, player2: board[1].$value == 1}" >
-				
-			</td>
-			<td class="box" ng-click="playerMove(2)" ng-class="{player1: board[2].$value == -1, player2: board[2].$value == 1}" >
-				
-			</td>
+			<td class="box m" ng-click="playerMove(1)" ng-class="{player1: game.board[1] == -1, player2: game.board[1] == 1}"></td>
+			
+			<td class="box" ng-click="playerMove(2)" ng-class="{player1: game.board[2] == -1, player2: game.board[2] == 1}"></td>
 		</tr>
+		
 		<tr id="row2">
-			<td class="box c" ng-click="playerMove(3)" ng-class="{player1: board[3].$value == -1, player2: board[3].$value == 1}" >
-			
-			</td>
-			<td class="box m c" ng-click="playerMove(4)" ng-class="{player1: board[4].$value == -1, player2: board[4].$value == 1}" >
-				
-			</td>
-			<td class="box c" ng-click="playerMove(5)" ng-class="{player1: board[5].$value == -1, player2: board[5].$value == 1}" >
-				
-			</td>
+		
+			<td class="box c" ng-click="playerMove(3)" ng-class="{player1: game.board[3] == -1, player2: game.board[3] == 1}"></td>
+		
+			<td class="box m c" ng-click="playerMove(4)" ng-class="{player1: game.board[4] == -1, player2: game.board[4] == 1}"></td>
+		
+			<td class="box c" ng-click="playerMove(5)" ng-class="{player1: game.board[5] == -1, player2: game.board[5] == 1}"></td>
 		</tr>
+		
 		<tr id="row3">
-			<td class="box" ng-click="playerMove(6)" ng-class="{player1: board[6].$value == -1, player2: board[6].$value == 1}" >
-				
-			</td>
-			<td class="box m" ng-click="playerMove(7)" ng-class="{player1: board[7].$value == -1, player2: board[7].$value == 1}" >
-				
-			</td>
-			<td class="box" ng-click="playerMove(8)" ng-class="{player1: board[8].$value == -1, player2: board[8].$value == 1}" >
-				
-			</td>
+		
+			<td class="box" ng-click="playerMove(6)" ng-class="{player1: game.board[6] == -1, player2: game.board[6] == 1}"></td>
+		
+			<td class="box m" ng-click="playerMove(7)" ng-class="{player1: game.board[7] == -1, player2: game.board[7] == 1}"></td>
+		
+			<td class="box" ng-click="playerMove(8)" ng-class="{player1: game.board[8] == -1, player2: game.board[8] == 1}"></td>
 		</tr>
 	</table>
 
+	<!-- Resets game -->
+	<div><button type="button" ng-click="resetGame()">Reset Game!</button></div>
 </body>
 </html>
