@@ -34,7 +34,6 @@ function GameController($scope, $firebaseObject) {
 					return;
 				}
 				$scope.game.board[cellIndex] = $scope.game.currentPlayer;
-				console.log('clicky clicky');
 				getWinner();
 
 				if ($scope.game.currentPlayer === -1) {
