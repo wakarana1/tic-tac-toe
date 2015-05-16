@@ -1,9 +1,9 @@
-/*Josefin Sans font*/
-@import url(https://fonts.googleapis.com/css?family=Josefin+Sans);
 
-* {
-	font-family: "Josefin Sans", sans-serif;
-}
+/*use this class for winner*/
+/*.bubble { 
+  animation:pulse 1s infinite; 
+  -webkit-animation:pulse 1s infinite;
+}*/
 
 .board {
 	width: 500px;
@@ -14,18 +14,23 @@
 h1 {
 	text-align: center;
 	margin-bottom: 50px;
-	font-family: "Josefin Sans", sans-serif;
+	font-family: "Helvetica Neue", sans-serif;
 }
 
 .box{
     width:30%;
     height:30%;
-    margin: 10%;
     background-color: gray;
     border-radius: 15px;
     box-shadow: 4px 4px black; 
     position: relative;
     transition: all 0.2s ease;
+}
+
+.player-info {
+    margin-left: 20px;
+    font-size: 25px;
+    float: left;
 }
 
 .m{
@@ -44,11 +49,7 @@ h1 {
     box-shadow: 0 0 black;
 
 }
-#player1 {
-	float: left;
-	margin-left: 30px;
-}
-#player2 {
+.player {
 	float: left;
 	margin-left: 30px;
 }
