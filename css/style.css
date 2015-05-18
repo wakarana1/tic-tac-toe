@@ -49,15 +49,28 @@ h1 {
     box-shadow: 0 0 black;
 
 }
-.player {
-	float: left;
-	margin-left: 30px;
-}
 
 .player1 {
-    background-color: orange;
+    background-color: blue;
 }
 
 .player2 {
-    background-color: chartreuse;
+    background-color: red;
+}
+
+#megaman {
+    background: url('../img/mmx_x4_x_sheet.gif')  no-repeat -217px -1395px;
+    width: 40px;
+    height: 80px;
+    -webkit-animation: megaman .5s steps(4) infinite;
+    animation: megaman .5s steps(4) infinite;
+}
+
+@keyframes megaman {
+    from {background-position: -5px 0; left: 0px;}
+    to{background-position: -586px 0; left: 100px;}
+}
+@-webkit-keyframes megaman {
+    from {background-position: -97px -1395px; left: 0px;}
+    to{background-position: -250px -1395px; left: 100px;}
 }

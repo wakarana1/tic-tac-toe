@@ -17,8 +17,14 @@
 
  	<!-- Player status -->
 	<div class="player">
-		<h1 ng-show="">{player1}</h1>
-		<h1 ng-show="">{player2}</h1>
+		<h1 ng-show="checkWinner == -1">
+			X Wins!
+			<br>
+			<div id="megaman"></div>
+		</h1>
+		<h1 ng-show="checkWinner == 1">
+			Zero Wins!
+		</h1>
 	</div>
 	<div class="player-info">
 		<span>X</span>
@@ -59,5 +65,6 @@
 
 	<!-- Resets game -->
 	<div><button type="button" ng-click="resetGame()">Reset Game!</button></div>
+	<div><button type="button" ng-click="leaveGame()">Leave</button></div>
 </body>
 </html>
